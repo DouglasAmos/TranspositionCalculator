@@ -18,11 +18,7 @@ public class Main {
 
         Notes notes = new Notes();
 
-        String userGuess = notes.getSelectedNote();
 
-        String[] noteArray = notes.getNotesInScale();
-
-        System.out.println(noteArray);
 
 
 
