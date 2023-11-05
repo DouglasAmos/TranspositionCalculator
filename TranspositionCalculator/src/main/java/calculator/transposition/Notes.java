@@ -5,6 +5,8 @@ public class Notes {
     private String selectedNote;
     private String transpositionDirection;
     private String goalNote;
+    private static final String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
+
 
     public String getSelectedNote() {
         return selectedNote;
@@ -30,10 +32,14 @@ public class Notes {
         this.goalNote = goalNote;
     }
 
-    private String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
 
     public String[] getNotesInScale() {
         return notesInScale;
+    }
+
+    public Notes(){
+
+
     }
 
 
