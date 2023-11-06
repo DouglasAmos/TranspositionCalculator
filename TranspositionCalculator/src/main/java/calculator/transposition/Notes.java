@@ -3,13 +3,13 @@ package calculator.transposition;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Notes implements Transferable{
+public class Notes {
 
     private String selectedNote;
     private String transpositionDirection;
     private String goalNote;
     private Integer intervalNumber;
-    private static final String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B","C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
+    private final String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B","C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
 
     Map<String, Integer> intervalMap = new HashMap<>();
 
@@ -64,46 +64,44 @@ public class Notes implements Transferable{
         return notesInScale;
     }
 
-    public Notes(){
-
-    }
 
 
-    public void intervalFinder(String userInputInterval){
-
-        for(Map.Entry<String, Integer> entry : intervalMap.entrySet()) {
-            if(entry.equals(userInputInterval)){
+    public void intervalFinder(String userInputInterval) {
+        for (Map.Entry<String, Integer> entry : intervalMap.entrySet()) {
+            if (entry.equals(userInputInterval)) {
                 intervalNumber = entry.getValue();
-            }
+                System.out.println(intervalNumber);
 
-
-    }
-
-
-/*
-    public void noteFinder(Transferable){
-
-        for(int i = 12; i < 24; i++){
-            if(notesInScale[i].equals(selectedNote)){
-               goalNote = notesInScale[i + intervalNumber];
             }
         }
-
- */
-
-
-
     }
 
 
+        public void noteFinder(){
+
+            for (int i = 12; i < 24; i++) {
+                if (notesInScale[i].equals(selectedNote)) {
+                    goalNote = notesInScale[i + intervalNumber];
+                    System.out.println(goalNote);
+                }
+            }
 
 
+        }
 
 
 
 
 
 }
+
+
+
+
+
+
+
+
 /*
     public void intervalFinder(){
         if(userInputInterval.equals("m2")){

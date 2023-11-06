@@ -2,8 +2,8 @@ package calculator.transposition;
 
 import java.util.Scanner;
 
-public class Main implements Transferable {
-    Notes notes = new Notes();
+public class Main {
+   static Notes notes = new Notes();
 
 
     public static void main(String[] args) {
@@ -23,6 +23,21 @@ public class Main implements Transferable {
         System.out.println("Are you transposing upward (U), or downward (D)?");
 
         String userInputDirection = inputScanner.nextLine();
+
+        notes.intervalFinder(userInputInterval);
+        notes.getTranspositionDirection();
+        notes.noteFinder();
+
+
+
+
+
+
+
+
+
+
+
 
 
 
