@@ -19,14 +19,14 @@ public class Main {
 
            String userInputInterval = inputScanner.nextLine();
 
-           notes.intervalFinder(userInputInterval);
+
            notes.noteFinder();
 
 
-           System.out.println("Are you transposing upward (U), or downward (D)?");
+           //System.out.println("Are you transposing upward (U), or downward (D)?");
 
-           String userInputDirection = inputScanner.nextLine();
-           notes.intervalFinder(userInputInterval);
+          // String userInputDirection = inputScanner.nextLine();
+
            notes.getTranspositionDirection();
            notes.noteFinder();
 

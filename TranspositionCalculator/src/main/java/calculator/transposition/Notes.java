@@ -29,6 +29,8 @@ public class Notes {
         intervalMap.put("M7", 11);
     }
 
+    private String[] intervalString = new String[]{"placeholder", "m2", "M2", "m3", "M3", "P4", "TT", "P5", "m6", "M6", "m7", "M7"};
+
 
     // if transpositionNumber > the length of the string depending on where you are starting then:
     // if transpositionAmount > notesInScale[i] - selectedNote: then
@@ -65,16 +67,12 @@ public class Notes {
     }
 
 
+    public void intervalTranspoNumber(){
 
-    public void intervalFinder(String userInputInterval) {
-        for (Map.Entry<String, Integer> entry : intervalMap.entrySet()) {
-            if (entry.equals(userInputInterval)) {
-                intervalNumber = entry.getValue();
-                System.out.println(intervalNumber);
-
-            }
-        }
     }
+
+
+
 
 
         public String noteFinder(){
@@ -99,6 +97,18 @@ public class Notes {
 
 }
 
+/*
+    public void intervalFinder(String userInputInterval) {
+        for (Map.Entry<String, Integer> entry : intervalMap.entrySet()) {
+            if (entry.equals(userInputInterval)) {
+                intervalNumber = entry.getValue();
+                System.out.println(intervalNumber);
+
+            }
+        }
+    }
+
+ */
 
 
 
