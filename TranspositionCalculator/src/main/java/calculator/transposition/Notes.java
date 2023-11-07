@@ -77,17 +77,21 @@ public class Notes {
     }
 
 
-        public void noteFinder(){
+        public String noteFinder(){
 
             for (int i = 12; i < 24; i++) {
                 if (notesInScale[i].equals(selectedNote)) {
                     goalNote = notesInScale[i + intervalNumber];
                     System.out.println(goalNote);
+                    return goalNote;
                 }
             }
 
+            return null;
 
         }
+
+
 
 
 
