@@ -1,10 +1,16 @@
 package calculator.transposition;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        //Ultimately, this is going to work much better as a separate class.  I'm working on it here for proof-of-concept
+
 
         Scanner inputScanner = new Scanner(System.in);
         final String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
@@ -14,6 +20,13 @@ public class Main {
         System.out.println("Would you like transpose a note? (yes/no)");
 
         String userAnswer = inputScanner.nextLine();
+
+        String log = "Log.txt";
+
+        File logFile = new File(log);
+
+
+
 
         while(userAnswer.equals("yes")) {
 
@@ -52,12 +65,22 @@ public class Main {
                     String goalNote = notesInScale[i + transpoNum];
                     System.out.println("Your desired note is: " + goalNote);
 
+                    try (PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))) {
+
+                        writer.println("Starting note: " + userInputStartNote + " Goal note: " + goalNote);
+
+                    } catch (Exception ex) {
+                        System.out.println("There was an error printing to the log");
+                    }
                 }
+
 
             }
 
             System.out.println("Would you like to transpose another note? (yes/no)");
             userAnswer = inputScanner.nextLine();
+
+
 
         }
 
