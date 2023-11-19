@@ -1,1 +1,4 @@
-Starting note: DGoal note: G#/Ab
+
+Starting note: F#/Gb Goal note: B
+Starting note: F Goal note: F#/Gb
+Starting note: A Goal note: G#/Ab

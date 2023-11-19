@@ -26,9 +26,7 @@ public class Main {
         File logFile = new File(log);
 
 
-
-
-        while(userAnswer.equals("yes")) {
+        while (userAnswer.equals("yes")) {
 
 
             System.out.println("Please enter your starting note:");
@@ -46,7 +44,6 @@ public class Main {
 
             System.out.println("Please enter your desired interval to transpose using lowercase for minor and uppercase for major: ");
             String userInputInterval = inputScanner.nextLine();
-
 
 
             int transpoNum = 0;
@@ -79,7 +76,6 @@ public class Main {
 
             System.out.println("Would you like to transpose another note? (yes/no)");
             userAnswer = inputScanner.nextLine();
-
 
 
         }
