@@ -21,24 +21,6 @@ public class Main {
             System.out.println("Please enter your starting note:");
             String userInputStartNote = inputScanner.nextLine();
 
-            /*
-            for(String input : notesInScale){
-                if(input.equals(userInputStartNote)){
-                    System.out.println("Please enter a valid note.");
-                    userInputStartNote = inputScanner.nextLine();
-                }
-            }
-
-             */
-
-            /*
-            while(notesInScale){
-                System.out.println("Please enter a valid note");
-                userInputStartNote = inputScanner.nextLine();
-
-            }
-
-             */
 
             System.out.println("Are you transposing upward (U), or downward (D)?");
             String userInputDirection = inputScanner.nextLine().toUpperCase();
