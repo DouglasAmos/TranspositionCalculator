@@ -52,12 +52,16 @@ public class Main {
             String userInputInterval = inputScanner.nextLine();
 
             /*
-            while (!userInputInterval.matches(Arrays.toString(intervalString))) {
+            while(!userInputInterval.matches(Arrays.toString(intervalString))) {
                 System.out.println("Please enter a valid interval");
+
                 userInputInterval = inputScanner.nextLine();
+
             }
 
              */
+
+
 
 
             int transpoNum = 0;
