@@ -9,3 +9,5 @@ Starting note: F Goal note: G#/Ab
 Starting note: G Goal note: G
 Starting note: C Goal note: C
 Starting note: D Goal note: A
+Starting note: D Goal note: G
+Starting note: F Goal note: A#/Bb

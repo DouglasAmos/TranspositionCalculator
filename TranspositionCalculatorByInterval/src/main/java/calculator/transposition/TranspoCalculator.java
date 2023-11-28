@@ -6,26 +6,21 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class TranspoCalculator {
 
-    public static void main(String[] args) {
+    private static final Scanner inputScanner = new Scanner(System.in);
+    private static final String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
 
-        //Ultimately, this is going to work much better as a separate class.  I'm working on it here for proof-of-concept
+    private static final String[] intervalString = new String[]{"U", "m2", "M2", "m3", "M3", "P4", "TT", "P5", "m6", "M6", "m7", "M7"};
+
+    private String log = "Log.txt";
+
+    private File logFile = new File(log);
 
 
-        Scanner inputScanner = new Scanner(System.in);
-        final String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
-
-        final String[] intervalString = new String[]{"", "m2", "M2", "m3", "M3", "P4", "TT", "P5", "m6", "M6", "m7", "M7"};
-
+    public void run(){
         System.out.println("Would you like transpose a note? (yes/no)");
-
         String userAnswer = inputScanner.nextLine();
-
-        String log = "Log.txt";
-
-        File logFile = new File(log);
-
 
         while (userAnswer.equals("yes")) {
 
@@ -62,8 +57,6 @@ public class Main {
              */
 
 
-
-
             int transpoNum = 0;
             for (int i = 0; i < intervalString.length; i++) {
                 if (userInputInterval.equals(intervalString[i])) {
@@ -97,6 +90,18 @@ public class Main {
 
 
         }
+
+
+
+    }
+
+
+    public static void main(String[] args) {
+
+        TranspoCalculator transpoCalculator = new TranspoCalculator();
+
+        transpoCalculator.run();
+
 
         System.out.println("Goodbye!");
 
