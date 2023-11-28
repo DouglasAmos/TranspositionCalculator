@@ -15,3 +15,6 @@ Starting note: F Transposition Distance: TT going: U Goal note: B
 Starting note: G Transposition Distance: P5(U) Goal note: D
 Starting note: F, Transposition Distance: m2(U), Goal note: F#/Gb
 Starting note: A|| Transposition Distance: m7(U)|| Goal note: G
+Starting note: F || Transposition Distance: TT(U) || Goal note: B
+Starting note: D || Transposition Distance: m7(U) || Goal note: C
+Starting note: G || Transposition Distance: fd(D) || Goal note: G

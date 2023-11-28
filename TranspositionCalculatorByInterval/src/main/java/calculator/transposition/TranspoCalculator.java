@@ -3,15 +3,19 @@ package calculator.transposition;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class TranspoCalculator {
 
     private static final Scanner inputScanner = new Scanner(System.in);
-    private static final String[] notesInScale = new String[]{"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
+    private static final String[] notesInScale = {"C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G",
+            "G#/Ab", "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb",
+            "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"};
 
-    private static final String[] intervalString = new String[]{"U", "m2", "M2", "m3", "M3", "P4", "TT", "P5", "m6", "M6", "m7", "M7"};
+    private final String[] intervalString = {"U", "m2", "M2", "m3", "M3", "P4", "TT", "P5", "m6", "M6", "m7", "M7"};
 
     private String log = "Log.txt";
 
@@ -24,11 +28,13 @@ public class TranspoCalculator {
 
         while (userAnswer.equals("yes")) {
 
+            //get rid of while and switch to if and if else
+            //run try catch
 
             System.out.println("Please enter your starting note:");
             String userInputStartNote = inputScanner.nextLine();
 
-            while (!userInputStartNote.matches(Arrays.toString(notesInScale))) {
+            if (!userInputStartNote.matches(Arrays.toString(notesInScale))) {
                 System.out.println("Please enter a valid starting note");
                 userInputStartNote = inputScanner.nextLine();
             }
@@ -37,7 +43,7 @@ public class TranspoCalculator {
             System.out.println("Are you transposing upward (U), or downward (D)?");
             String userInputDirection = inputScanner.nextLine().toUpperCase();
 
-            while (!userInputDirection.equals("U") && !userInputDirection.equals("D")) {
+            if (!userInputDirection.equals("U") && !userInputDirection.equals("D")) {
                 System.out.println("Please enter a valid option U or D");
                 userInputDirection = inputScanner.nextLine().toUpperCase();
 
@@ -46,15 +52,13 @@ public class TranspoCalculator {
             System.out.println("Please enter your desired interval to transpose using lowercase for minor and uppercase for major: ");
             String userInputInterval = inputScanner.nextLine();
 
-            /*
-            while(!userInputInterval.matches(Arrays.toString(intervalString))) {
+            if(!userInputInterval.contains(Arrays.toString(intervalString))) {
                 System.out.println("Please enter a valid interval");
 
                 userInputInterval = inputScanner.nextLine();
 
             }
 
-             */
 
 
             int transpoNum = 0;
@@ -75,7 +79,8 @@ public class TranspoCalculator {
 
                     try (PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))) {
 
-                        writer.println("Starting note: " + userInputStartNote + " || Transposition Distance: " + userInputInterval + "(" + userInputDirection + ")" + " || Goal note: " + goalNote);
+                        writer.println("Starting note: " + userInputStartNote + " || Transposition Distance: " +
+                                userInputInterval + "(" + userInputDirection + ")" + " || Goal note: " + goalNote);
 
                     } catch (Exception ex) {
                         System.out.println("There was an error printing to the log");
