@@ -18,7 +18,7 @@ public class TranspoCalculator {
     private File logFile = new File(log);
 
 
-    public void run(){
+    public void run() {
         System.out.println("Would you like transpose a note? (yes/no)");
         String userAnswer = inputScanner.nextLine();
 
@@ -75,7 +75,7 @@ public class TranspoCalculator {
 
                     try (PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))) {
 
-                        writer.println("Starting note: " + userInputStartNote + " Goal note: " + goalNote);
+                        writer.println("Starting note: " + userInputStartNote + " || Transposition Distance: " + userInputInterval + "(" + userInputDirection + ")" + " || Goal note: " + goalNote);
 
                     } catch (Exception ex) {
                         System.out.println("There was an error printing to the log");
@@ -90,7 +90,6 @@ public class TranspoCalculator {
 
 
         }
-
 
 
     }
