@@ -31,33 +31,44 @@ public class TranspoCalculator {
             //get rid of while and switch to if and if else
             //run try catch
 
+            //My website will use a drop down menu, so I will have total control over the inputs.  No need for error catches
+
             System.out.println("Please enter your starting note:");
             String userInputStartNote = inputScanner.nextLine();
 
+            /*
             if (!userInputStartNote.matches(Arrays.toString(notesInScale))) {
                 System.out.println("Please enter a valid starting note");
                 userInputStartNote = inputScanner.nextLine();
             }
 
+             */
+
 
             System.out.println("Are you transposing upward (U), or downward (D)?");
             String userInputDirection = inputScanner.nextLine().toUpperCase();
 
+            /*
             if (!userInputDirection.equals("U") && !userInputDirection.equals("D")) {
                 System.out.println("Please enter a valid option U or D");
                 userInputDirection = inputScanner.nextLine().toUpperCase();
 
             }
 
+             */
+
             System.out.println("Please enter your desired interval to transpose using lowercase for minor and uppercase for major: ");
             String userInputInterval = inputScanner.nextLine();
 
+            /*
             if(!userInputInterval.contains(Arrays.toString(intervalString))) {
                 System.out.println("Please enter a valid interval");
 
                 userInputInterval = inputScanner.nextLine();
 
             }
+
+             */
 
 
 
